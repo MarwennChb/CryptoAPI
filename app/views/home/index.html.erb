@@ -1,2 +1,36 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container" align="center">
+
+
+	<br>
+	
+	<%= form_for :search do |f| %>
+
+
+
+	<div class="field">
+
+		<%= f.label :Choose_a_currency %><br />
+
+		<%= f.select :choice, (@currencies) %>
+
+	</div>
+
+	<br>
+
+	<div class="actions">
+
+		<%= f.submit "Search" %>
+
+	</div>
+
+	<br>
+
+	<% end %>
+
+	<%unless @currency == nil %>
+	<div>
+		<p> Currency : <%= @currency %> </p>
+		<p> Price : <%= @price %> </p>
+	</div>
+	<%end%>
+</div>
